@@ -1,0 +1,23 @@
+In this file, the instructions to install prometheus and grafana on kubernetes cluster has been specified
+
+1. Installing Prometheus using Helm Charts
+
+  helm search hub prometheus
+  helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+  helm repo list 
+  helm install prometheus prometheus-community/prometheus
+  kubectl get pods
+  kubectl get svc
+  kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-svc
+  minikube service prometheus-svc
+  
+  
+ 2. Installing grafana using Helm Charts
+ 
+    helm search hub grafana
+    helm repo add grafana https://grafana.io/helm-charts
+    helm repo list
+    helm install grafana grafana/grafana
+    kubectl expose service grafana --type=NodePort --target-port=3000 --name=grafana-svc
+    kubectl get secret — namespace default grafana -o jsonpath=”{.data.admin-password}” | base64 — decode ; echo
+    minikube service grafana-svc
