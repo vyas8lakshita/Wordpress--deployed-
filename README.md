@@ -7,6 +7,7 @@ helm repo add wordpress https://vyas8lakshita.github.io/wordpress/
 helm repo list
 helm search repo wordpress
 helm install wordpress wordpress/wordpress
+helm delete wordpress  (For clean up)
 
 To check pods, svc, deployments, you can run 
 kubectl get all
