@@ -1,4 +1,7 @@
-To deploy the application, you can follow the below listed commands 
+In this repository you will get the code to build images like mysql,nginx and wordpress. Along with that yaml files to deploy those images has also been provided. 
+
+
+Although for the sake of convenience you can follow the below listed commands in order to deploy the images  
 
 helm repo add wordpress https://vyas8lakshita.github.io/wordpress/
 helm repo list
